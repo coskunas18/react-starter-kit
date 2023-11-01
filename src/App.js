@@ -1,15 +1,18 @@
-
-import {SiteProvider,AuthProvider} from './context';
-import Home from './components/Home';
-
+import { useEffect } from 'react';
+import {getPosts,getPostDetail,getUsers} from './services'
 
 function App() {
+
+  useEffect(()=>{
+    getPosts().then(res => console.log(res))
+    getPostDetail(2).then(res => console.log(res))
+    getUsers().then(res => console.log(res))
+  })
+
  return(
-  <SiteProvider>
-    <AuthProvider>
-      <Home/>
-    </AuthProvider>
-  </SiteProvider>
+  <>
+
+  </>
  )
 
 }
