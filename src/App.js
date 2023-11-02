@@ -1,20 +1,17 @@
-import { useEffect } from 'react';
-import {getPosts,getPostDetail,getUsers} from './services'
+import { useRoutes} from "react-router-dom";
+import routes from "./routes";
+import { url } from "./utils";
+
+
 
 function App() {
+ console.log(url('home.blog.post',{
+  id:3,
+  url:'test-cankiri'
+})) 
 
-  useEffect(()=>{
-    getPosts().then(res => console.log(res))
-    getPostDetail(2).then(res => console.log(res))
-    getUsers().then(res => console.log(res))
-  })
-
- return(
-  <>
-
-  </>
- )
-
+console.log(url('home.blog.categories')) 
+  return useRoutes(routes)
 }
 
 export default App;
