@@ -4,7 +4,6 @@ export default function BlogLayout(params) {
 
     return(
         <div>
-
             <Outlet/>
         </div>
     )
